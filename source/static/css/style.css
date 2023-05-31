@@ -1,0 +1,46 @@
+body{
+    font-family: SansSerif, sans-serif;
+    font-size: 20px;
+    background: #c8a78c;
+    color: black;
+}
+
+input, option {
+    width: 540px;
+    height: 40px;
+    font-size: 20px;
+}
+
+select{
+    width: 300px;
+    height: 40px;
+    font-size: 20px;
+}
+
+.button_style{
+    width: 140px;
+    height: 40px;
+    font-size: 20px;
+}
+
+#confirm_button{
+    margin-top: 150px;
+}
+
+.container{
+    margin: 0 auto;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+}
+
+img{
+    width: 300px;
+    height: 220px;
+    padding-right: 50px;
+}
+
+.block{
+    display: inline-block;
+    text-align: left;
+}

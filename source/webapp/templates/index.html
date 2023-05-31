@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Cat</title>
+</head>
+<body>
+    <div class="container">
+        <p>Welcome to the cat simulator
+            <br>
+            in order to start enter the name of the cat</p>
+            <br>
+        <form action="/cat_stats/" method="post">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="enter cat's name">
+            <br><br>
+            <input type="submit" value="create" class="button_style">
+        </form>
+    </div>
+</body>
+</html>

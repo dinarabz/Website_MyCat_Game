@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Information</title>
+</head>
+<body>
+<div class="container block">
+    <div class="block">
+        {% if happiness == 0 %}
+            <img src="{% static 'media/sad_cat.jpg'%}">
+        {% elif 0 < happiness and happiness < 20 %}
+            <img src="{% static 'media/normal_cat.jpg'%}">
+        {% else %}
+            <img src="{% static 'media/happy_cat.jpg'%}">
+        {% endif %}
+    </div>
+    <div class="block">
+        <p>Cat - {{ name }}</p>
+        <p>Age - {{ age }} years old</p>
+        <p>Health level - {{ health }}</p>
+        <p>Happiness level - {{ happiness }}</p>
+        <p>Satiety level - {{ satiety }}</p>
+        <p>Sleeping mode - "{{ sleep }}"</p>
+    </div>
+    <form action="/cat_stats/" method="post">
+        {% csrf_token %}
+        <select name="action" >
+            <option value="" disabled selected>Choose an action</option>
+            <option value="play">Play with the cat</option>
+            {% if sleep == 'off' %}
+                <option value="feed">Feed the cat</option>
+                <option value="sleep">Put the cat to sleep</option>
+            {% endif %}
+            <option value="visit_vet">Visit the vet</option>
+        </select>
+        <br>
+            <input type="submit" value="confirm" class="button_style" id="confirm_button">
+    </form>
+</div>
+</body>
+</html>
